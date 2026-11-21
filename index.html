@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <script>
+      try {
+        var theme = localStorage.getItem("notes-theme")
+        var dark =
+          theme === "dark" ||
+          (theme !== "light" && matchMedia("(prefers-color-scheme: dark)").matches)
+        if (dark) document.documentElement.classList.add("dark")
+        document.documentElement.style.colorScheme = dark ? "dark" : "light"
+        var meta = document.querySelector('meta[name="theme-color"]')
+        if (meta) meta.setAttribute("content", dark ? "#202124" : "#ffffff")
+      } catch (e) {}
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta
+      name="description"
+      content="Notes and checklists kept on this device. No account, no sync."
+    />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Notes" />
+    <link rel="icon" href="/notes/favicon.svg" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/notes/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="/notes/manifest.json" />
+    <title>Notes</title>
+    <script type="module" crossorigin src="/notes/assets/index-Cwm55asy.js"></script>
+    <link rel="stylesheet" crossorigin href="/notes/assets/index-BTVJh-vs.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
